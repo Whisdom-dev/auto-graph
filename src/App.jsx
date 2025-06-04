@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import HomePage from "./components/HomePage";
 import ProductsPage from "./components/ProductsPage";
 import ProductDetail from "./components/ProductDetail";
-import Navbar from "./components/Navbar";
+import NavBar from "./components/NavBar";
 import Layout from './components/Layout';
 import CartPage from "./components/CartPage";
 import Checkout from './components/Checkout';
@@ -33,7 +33,7 @@ const App = () => {
     <AuthProvider>
       <CartProvider>
         <Router>
-          <Navbar />
+          <NavBar />
           <Routes>
   <Route path="/" element={<HomePage />} />
   <Route path="/products" element={<ProductsPage />} />
