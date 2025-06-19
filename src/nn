@@ -855,3 +855,24 @@ createRoot(document.getElementById('root')).render(
     </CartProvider>
   </StrictMode>,
 );
+
+
+import img2 from '../images/img2.webp';
+import img3 from '../images/img3.webp';
+import img1 from '../images/img1.jpg';
+import img11 from '../images/img11.jpg';
+import img12 from '../images/img12.webp';
+import img13 from '../images/img13.jpg';
+import img14 from '../images/img14.jpg';
+import img15 from '../images/img15.avif';
+import img16 from '../images/img16.webp';
+
+{ id: 13, name: "Modal Blend Long T-Shirt", price: "€120.00", category: "Women", image: img11 },
+{ id: 14, name: "Modal Blend Long T-Shirt", price: "€120.00", category: "Women", image: img12 },
+{ id: 15, name: "Modal Blend Long T-Shirt", price: "€120.00", category: "Women", image: img13 },
+{ id: 16, name: "Modal Blend Long T-Shirt", price: "€120.00", category: "Women", image: img14 },
+{ id: 17, name: "Modal Blend Long T-Shirt", price: "€120.00", category: "Women", image: img15 },
+{ id: 18, name: "Modal Blend Long T-Shirt", price: "€120.00", category: "Women", image: img16 },
+{ id: 19, name: "Modal Blend Long T-Shirt", price: "€120.00", category: "Women", image: img1 },
+{ id: 20, name: "Modal Blend Long T-Shirt", price: "€120.00", category: "Women", image: img2 },
+{ id: 21, name: "Modal Blend Long T-Shirt", price: "€120.00", category: "Women", image: img3 },

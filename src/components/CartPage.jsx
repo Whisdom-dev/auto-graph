@@ -58,10 +58,10 @@ const CartPage = () => {
           <Link to="/checkout">
             <button
               disabled={cartItems.length === 0}
-              className={`mt-4 w-full py-2 rounded-lg text-white ${
+              className={`mt-4 w-full py-2 rounded-lg text-red ${
                 cartItems.length === 0
                   ? 'bg-gray-300 cursor-not-allowed'
-                  : 'bg-red-500 hover:bg-red-600'
+                  : 'bg-white  border font-medium hover:bg-red-300 text-red-500'
               } transition-colors duration-300`}
             >
               Proceed to Checkout

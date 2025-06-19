@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import Footer from "../components/Footer";
 import HeroImage from '../images/HeroImage.webp';
-import img1 from '../images/img1.jpg';
 import img2 from '../images/img2.webp';
 import img3 from '../images/img3.webp';
 import img4 from '../images/img4.jpg';
@@ -18,20 +16,7 @@ import img18 from '../images/img18.jpg';
 import img19 from '../images/img19.avif';
 import img20 from '../images/img20.jpg';
 import img21 from '../images/img21.webp';
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-};
+import ProductGrid from './ProductGrid';
 
 const products = [
   { id: 1, name: "AITO T-SHIRT", price: "€85.00", image: img4 },
@@ -56,7 +41,7 @@ const HomePage = () => {
     <div className="w-full">
       {/* Hero Section */}
       <div
-        className="relative w-full h-[60vh] flex items-center justify-center bg-center bg-cover"
+        className="relative w-full h-[80vh] flex items-center justify-center bg-center bg-cover"
         style={{ backgroundImage: `url(${HeroImage})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -64,7 +49,7 @@ const HomePage = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-4">SUMMER SALE</h1>
           <p className="text-lg md:text-xl mb-6">ENJOY UP TO 75% OFF SITE WIDE</p>
           <Link to="/products">
-            <button className="bg-red-600 hover:bg-red-700 text-white py-2 px-6 rounded-full font-semibold transition duration-300">
+            <button className="bg-red-600 hover:bg-red-700 text-white py-2 px-6 cursor-pointer rounded-full font-semibold transition duration-300">
               SHOP ALL
             </button>
           </Link>
@@ -118,7 +103,7 @@ const HomePage = () => {
             </div>
 
             {/* Add to Cart */}
-            <button className="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700">
+            <button className="bg-red-600 text-white px-6 py-2 cursor-pointer rounded hover:bg-red-700">
               ADD TO CART
             </button>
           </div>
@@ -137,7 +122,7 @@ const HomePage = () => {
           {
             icon: '🚚',
             title: 'FREE SHIPPING OVER 500€',
-            desc: 'We ship worldwide with DHL Express, ensuring delivery within 4 days right to the customer’s doorstep.',
+            desc: 'We ship worldwide with DHL Express, ensuring delivery within 4 days right to the customer\'s doorstep.',
           },
           {
             icon: '💬',
@@ -152,7 +137,7 @@ const HomePage = () => {
           {
             icon: '⭐',
             title: 'OVER 60 RENOWNED DESIGNER LABELS',
-            desc: 'Featuring a curated collection of the world’s most innovative and artistic fashion designers.',
+            desc: 'Featuring a curated collection of the world\'s most innovative and artistic fashion designers.',
           },
         ].map((item, i) => (
           <div key={i}>
@@ -167,51 +152,5 @@ const HomePage = () => {
     </div>
   );
 };
-
-const ProductGrid = ({ title, products }) => (
-  <div className="px-4 py-10">
-    <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 uppercase tracking-wide">
-      {title}
-    </h2>
-    <div className="px-4 md:px-8">
-      <motion.div
-        className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {products.map((product) => (
-          <motion.div
-            key={product.id}
-            className="flex flex-col items-center text-center space-y-1"
-            variants={itemVariants}
-          >
-            <div className="relative w-full">
-              <span className="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1 rounded uppercase">
-                New
-              </span>
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-[400px] object-cover rounded-lg"
-              />
-            </div>
-            <div>
-              <h3 className="font-semibold text-base">{product.name}</h3>
-              <p className="text-sm text-gray-800">{product.price}</p>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
-    </div>
-    <div className="text-center mt-10">
-      <Link to="/products">
-        <button className="bg-black text-white px-8 py-3 rounded-full uppercase hover:bg-gray-800 transition duration-300">
-          View All
-        </button>
-      </Link>
-    </div>
-  </div>
-);
 
 export default HomePage;

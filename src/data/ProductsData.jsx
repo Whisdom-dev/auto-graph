@@ -10,6 +10,16 @@ import img18 from '../images/img18.jpg';
 import img19 from '../images/img19.avif';
 import img20 from '../images/img20.jpg';
 import img21 from '../images/img21.webp';
+import img2 from '../images/img2.webp';
+import img3 from '../images/img3.webp';
+import img1 from '../images/img1.jpg';
+import img11 from '../images/img11.jpg';
+import img12 from '../images/img12.webp';
+import img13 from '../images/img13.jpg';
+import img14 from '../images/img14.jpg';
+import img15 from '../images/img15.avif';
+import img16 from '../images/img16.webp';
+
 
 const allProducts = [
   { id: 1, name: "AITO T-SHIRT", price: "€85.00", category: "Men", image: img4 },
@@ -24,6 +34,15 @@ const allProducts = [
   { id: 10, name: "V-Neck Ribbed T-Shirt", price: "€95.00", category: "Women", image: img19 },
   { id: 11, name: "Cropped Boxy T-Shirt", price: "€80.00", category: "Women", image: img20 },
   { id: 12, name: "Modal Blend Long T-Shirt", price: "€120.00", category: "Women", image: img21 },
+  { id: 13, name: "Premium Cotton Crew Neck", price: "€90.00", category: "Women", image: img11 },
+  { id: 14, name: "Silk Blend V-Neck Tee", price: "€150.00", category: "Women", image: img12 },
+  { id: 15, name: "Organic Cotton Basic Tee", price: "€65.00", category: "Women", image: img13 },
+  { id: 16, name: "Linen Blend Oversized Shirt", price: "€135.00", category: "Women", image: img14 },
+  { id: 17, name: "Ribbed Knit Crop Top", price: "€85.00", category: "Women", image: img15 },
+  { id: 18, name: "Premium Pima Cotton Tee", price: "€110.00", category: "Women", image: img16 },
+  { id: 19, name: "Classic Fit Cotton Shirt", price: "€70.00", category: "Women", image: img1 },
+  { id: 20, name: "Slim Fit Performance Tee", price: "€95.00", category: "Women", image: img2 },
+  { id: 21, name: "Relaxed Fit Linen Shirt", price: "€105.00", category: "Women", image: img3 },
 ];
 
 export default allProducts;

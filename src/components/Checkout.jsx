@@ -123,7 +123,7 @@ const Checkout = () => {
 
       <button
         onClick={getUserLocation}
-        className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 rounded-lg mb-4 transition"
+        className="w-full bg-white border hover:bg-red-200 text-red-500 font-medium py-2 rounded-lg mb-4 transition"
       >
         Estimate Delivery Fee
       </button>
@@ -150,7 +150,7 @@ const Checkout = () => {
           className={`w-full py-2 font-medium rounded-lg transition ${
             loading || cartItems.length === 0
               ? 'bg-gray-400 cursor-not-allowed'
-              : 'bg-green-500 hover:bg-green-600 text-white'
+              : 'bg-white border hover:bg-red-300 text-red-500'
           }`}
         >
           {loading ? 'Processing...' : 'Pay Now'}

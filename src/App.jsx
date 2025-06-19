@@ -4,7 +4,7 @@ import HomePage from "./components/HomePage";
 import ProductsPage from "./components/ProductsPage";
 import ProductDetail from "./components/ProductDetail";
 import NavBar from "./components/NavBar";
-import Layout from './components/Layout';
+
 import CartPage from "./components/CartPage";
 import Checkout from './components/Checkout';
 import ConfirmationPage from "./components/ConfirmationPage";
@@ -12,7 +12,6 @@ import LoginPage from "./components/LoginPage";
 import ForgotPassword from './components/ForgotPassword';
 import { CartContext } from './components/CartContext';
 import SignUp from './components/SignUp';
-import { CartProvider } from "./components/CartContext";
 import { AuthProvider, AuthContext } from "./components/AuthContext";
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -31,22 +30,20 @@ const CheckoutWrapper = () => {
 const App = () => {
   return (
     <AuthProvider>
-      <CartProvider>
-        <Router>
-          <NavBar />
-          <Routes>
-  <Route path="/" element={<HomePage />} />
-  <Route path="/products" element={<ProductsPage />} />
-  <Route path="/product/:id" element={<ProductDetail />} />
-  <Route path="/cart" element={<PrivateRoute element={<CartPage />} />} />
-  <Route path="/checkout" element={<PrivateRoute element={<CheckoutWrapper />} />} />
-  <Route path="/confirmation" element={<ConfirmationPage />} />
-  <Route path="/login" element={<LoginPage />} />
-  <Route path="/forgot-password" element={<ForgotPassword />} />
-  <Route path="/signup" element={<SignUp />} />
-</Routes>
-        </Router>
-      </CartProvider>
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<PrivateRoute element={<CartPage />} />} />
+          <Route path="/checkout" element={<PrivateRoute element={<CheckoutWrapper />} />} />
+          <Route path="/confirmation" element={<ConfirmationPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </Router>
     </AuthProvider>
   );
 };

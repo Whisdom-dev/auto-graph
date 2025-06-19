@@ -1,20 +1,8 @@
 import React, { useState, useContext } from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import allProducts from "../data/ProductsData";
 import { CartContext } from "../components/CartContext";
-
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.15 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-  hover: { scale: 1.05, transition: { duration: 0.3 } },
-};
 
 const ProductsPage = () => {
   const [filter, setFilter] = useState("All");
@@ -64,18 +52,13 @@ const ProductsPage = () => {
       </div>
 
       {/* Product Grid */}
-      <motion.div
+      <div
         className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
       >
         {filteredProducts.map((product) => (
-          <motion.div
+          <div
             key={product.id}
             className="flex flex-col items-center text-center space-y-1 cursor-pointer  p-2 rounded"
-            variants={itemVariants}
-            whileHover="hover"
           >
             <Link to={`/product/${product.id}`} className="w-full">
               <div className="relative w-full">
@@ -95,13 +78,13 @@ const ProductsPage = () => {
             </Link>
             <button
               onClick={() => addToCart(product)}
-              className="bg-red-600 text-white px-4 py-1 rounded mt-1 hover:bg-red-700"
+              className="bg-white text-red-600 border  px-4 py-1 cursor-pointer rounded mt-1 hover:bg-red-200"
             >
               Add to Cart
             </button>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
       </section>
       <br></br>
 
@@ -111,7 +94,7 @@ const ProductsPage = () => {
           {
             icon: '🚚',
             title: 'FREE SHIPPING OVER 500€',
-            desc: 'We ship worldwide with DHL Express, ensuring delivery within 4 days right to the customer’s doorstep.',
+            desc: 'We ship worldwide with DHL Express, ensuring delivery within 4 days right to the customer\'s doorstep.',
           },
           {
             icon: '💬',
@@ -126,7 +109,7 @@ const ProductsPage = () => {
           {
             icon: '⭐',
             title: 'OVER 60 RENOWNED DESIGNER LABELS',
-            desc: 'Featuring a curated collection of the world’s most innovative and artistic fashion designers.',
+            desc: 'Featuring a curated collection of the world\'s most innovative and artistic fashion designers.',
           },
         ].map((item, i) => (
           <div key={i}>
