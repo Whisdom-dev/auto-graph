@@ -38,42 +38,42 @@ const womenProducts = [
 
 const HomePage = () => {
   return (
-    <div className="w-full">
+    <div className="w-full bg-white">
       {/* Hero Section */}
       <div
         className="relative w-full h-[80vh] flex items-center justify-center bg-center bg-cover"
         style={{ backgroundImage: `url(${HeroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">SUMMER SALE</h1>
-          <p className="text-lg md:text-xl mb-6">ENJOY UP TO 75% OFF SITE WIDE</p>
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="relative z-10 text-center text-white px-4 drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-wide">Summer Sale</h1>
+          <p className="text-lg md:text-2xl mb-6 font-medium tracking-wide">Enjoy up to 75% off site wide</p>
           <Link to="/products">
-            <button className="bg-red-600 hover:bg-red-700 text-white py-2 px-6 cursor-pointer rounded-full font-semibold transition duration-300">
-              SHOP ALL
+            <button className="bg-red-600 hover:bg-red-700 text-white py-3 px-8 cursor-pointer rounded-full font-bold text-lg uppercase tracking-wider shadow-lg transition duration-300">
+              Shop All
             </button>
           </Link>
         </div>
       </div>
 
-      {/* Product Feature Section */}
-      <div className="px-4 py-10">
-        <div className="flex flex-col md:flex-row gap-4">
+      {/* Featured Product Card */}
+      <section className="max-w-5xl mx-auto -mt-16 mb-12 px-4">
+        <div className="bg-white rounded-xl shadow-lg flex flex-col md:flex-row gap-8 p-8 border border-gray-200">
           {/* Product Images */}
-          <div className="flex-1">
-            <img src={img9} alt="Smiley Socks" className="w-3/4 h-100 object-cover mb-4 rounded" />
+          <div className="flex-1 flex flex-col items-center justify-center">
+            <img src={img9} alt="Smiley Socks" className="w-3/4 h-80 object-cover mb-4 rounded-lg shadow" />
             <div className="flex gap-2">
-              <img src={img2} alt="Socks detail" className="w-1/5 h-20 object-cover rounded" />
-              <img src={img3} alt="Socks detail" className="w-1/5 h-20 object-cover rounded" />
+              <img src={img2} alt="Socks detail" className="w-16 h-16 object-cover rounded" />
+              <img src={img3} alt="Socks detail" className="w-16 h-16 object-cover rounded" />
             </div>
           </div>
 
           {/* Product Details */}
-          <div className="flex-1">
-            <h2 className="text-2xl font-bold mb-2">SMILEYCORE 4-PACK CREW SOCKS</h2>
-            <p className="text-gray-600 line-through">₦100,200.00</p>
-            <p className="text-red-600 font-semibold text-lg mb-4">₦50,100.00</p>
-            <p className="mb-4">
+          <div className="flex-1 flex flex-col justify-center">
+            <h2 className="text-2xl font-bold mb-2 text-black">Smileycore 4-Pack Crew Socks</h2>
+            <p className="text-gray-400 line-through">₦100,200.00</p>
+            <p className="text-red-600 font-bold text-xl mb-4">₦50,100.00</p>
+            <p className="mb-4 text-gray-700">
               Turn your essentials into a statement with the SmileyCore Crew Socks.
               Designed with durable cotton, these socks feature a stitched-in smile motif,
               and high-performance ventilation.
@@ -88,65 +88,69 @@ const HomePage = () => {
 
             {/* Color Options */}
             <div className="mb-4">
-              <h4 className="font-semibold mb-2">COLOR</h4>
+              <h4 className="font-semibold mb-2 text-black">Color</h4>
               <div className="flex flex-wrap gap-2">
-                {["White", "Black", "Gray", "White & brown", "White & black", "Black & Brown", "Gray & Black"].map(color => (
-                  <button key={color} className="border px-3 py-1 rounded">{color}</button>
+                {[
+                  "White", "Black", "Gray", "White & brown", "White & black", "Black & Brown", "Gray & Black"
+                ].map(color => (
+                  <button key={color} className="border border-gray-300 px-3 py-1 rounded text-black bg-white hover:bg-red-50 transition">
+                    {color}
+                  </button>
                 ))}
               </div>
             </div>
 
             {/* Size */}
             <div className="mb-4">
-              <h4 className="font-semibold mb-2">ONE SIZE</h4>
-              <div className="border inline-block px-3 py-1 rounded">US 7-11.5</div>
+              <h4 className="font-semibold mb-2 text-black">One Size</h4>
+              <div className="border border-gray-300 inline-block px-3 py-1 rounded text-black bg-white">US 7-11.5</div>
             </div>
 
             {/* Add to Cart */}
-            <button className="bg-red-600 text-white px-6 py-2 cursor-pointer rounded hover:bg-red-700">
-              ADD TO CART
+            <button className="bg-red-600 text-white px-8 py-2 cursor-pointer rounded-full hover:bg-red-700 font-semibold uppercase tracking-wide shadow transition">
+              Add to Cart
             </button>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Men's T-Shirts */}
+      {/* ProductGrid sections remain untouched */}
       <ProductGrid title="Men's T-Shirts" products={products} />
-
-      {/* Women's T-Shirts */}
       <ProductGrid title="Women's T-Shirts" products={womenProducts} />
 
       {/* Top Benefits Section */}
-      <div className="max-w-7xl mx-auto py-10 grid grid-cols-1 md:grid-cols-4 gap-6 text-center border-b">
-        {[
-          {
-            icon: '🚚',
-            title: 'FREE SHIPPING OVER 500€',
-            desc: 'We ship worldwide with DHL Express, ensuring delivery within 4 days right to the customer\'s doorstep.',
-          },
-          {
-            icon: '💬',
-            title: 'CUSTOMER SERVICE',
-            desc: 'We are available from Monday to Friday to answer your questions.',
-          },
-          {
-            icon: '🛡️',
-            title: 'SECURE PAYMENT',
-            desc: 'Your payment information is processed securely.',
-          },
-          {
-            icon: '⭐',
-            title: 'OVER 60 RENOWNED DESIGNER LABELS',
-            desc: 'Featuring a curated collection of the world\'s most innovative and artistic fashion designers.',
-          },
-        ].map((item, i) => (
-          <div key={i}>
-            <div className="text-2xl mb-2">{item.icon}</div>
-            <h4 className="uppercase text-sm font-medium">{item.title}</h4>
-            <p className="text-sm mt-2">{item.desc}</p>
-          </div>
-        ))}
-      </div>
+      <section className="bg-gray-100 border-b">
+        <div className="max-w-7xl mx-auto py-10 grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+          {[
+            {
+              icon: '🚚',
+              title: 'FREE SHIPPING OVER 500€',
+              desc: 'We ship worldwide with DHL Express, ensuring delivery within 4 days right to the customer\'s doorstep.',
+            },
+            {
+              icon: '💬',
+              title: 'CUSTOMER SERVICE',
+              desc: 'We are available from Monday to Friday to answer your questions.',
+            },
+            {
+              icon: '🛡️',
+              title: 'SECURE PAYMENT',
+              desc: 'Your payment information is processed securely.',
+            },
+            {
+              icon: '⭐',
+              title: 'OVER 60 RENOWNED DESIGNER LABELS',
+              desc: 'Featuring a curated collection of the world\'s most innovative and artistic fashion designers.',
+            },
+          ].map((item, i) => (
+            <div key={i}>
+              <div className="text-3xl mb-2 text-red-600">{item.icon}</div>
+              <h4 className="uppercase text-base font-bold text-black">{item.title}</h4>
+              <p className="text-sm mt-2 text-gray-700">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <Footer />
     </div>

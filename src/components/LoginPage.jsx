@@ -12,11 +12,17 @@ const LoginPage = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Hardcoded credentials check
-    if (username === 'user' && password === 'password') {
-      login(); // update authentication in context
-      localStorage.setItem('isAuthenticated', 'true'); // store to persist
-      navigate('/products'); // redirect to products page
+    // Admin credentials
+    if (username === 'admin' && password === 'admin123') {
+      login(true); // admin
+      localStorage.setItem('isAuthenticated', 'true');
+      localStorage.setItem('isAdmin', 'true');
+      navigate('/admin');
+    } else if (username === 'user' && password === 'password') {
+      login(false); // regular user
+      localStorage.setItem('isAuthenticated', 'true');
+      localStorage.setItem('isAdmin', 'false');
+      navigate('/products');
     } else {
       alert('Invalid credentials');
     }

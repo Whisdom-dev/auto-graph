@@ -19,6 +19,7 @@ const ProductsPage = () => {
   });
 
   return (
+    <>
     <div className="px-4 py-10">
       <section>
       <h1 className="text-3xl md:text-4xl font-bold text-center mb-10 uppercase tracking-wide">
@@ -120,9 +121,9 @@ const ProductsPage = () => {
         ))}
       </div>
 
-       <Footer />
-     
+      <Footer />
     </div>
+    </>
   );
 };
 

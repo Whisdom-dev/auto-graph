@@ -15,6 +15,10 @@ import SignUp from './components/SignUp';
 import { AuthProvider, AuthContext } from "./components/AuthContext";
 import 'swiper/css';
 import 'swiper/css/navigation';
+import AdminPage from "./components/AdminPage";
+import AboutUs from "./components/AboutUs";
+import HelpCenter from "./components/HelpCenter";
+import AccountPage from "./components/AccountPage";
 
 const PrivateRoute = ({ element }) => {
   const { isAuthenticated } = useContext(AuthContext);
@@ -26,6 +30,10 @@ const CheckoutWrapper = () => {
   return <Checkout cart={cart} />;
 };
 
+const AdminRoute = ({ element }) => {
+  const { isAuthenticated, isAdmin } = useContext(AuthContext);
+  return isAuthenticated && isAdmin ? element : <Navigate to="/login" replace />;
+};
 
 const App = () => {
   return (
@@ -42,6 +50,10 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/admin" element={<AdminRoute element={<AdminPage />} />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/help-center" element={<HelpCenter />} />
+          <Route path="/account" element={<AccountPage />} />
         </Routes>
       </Router>
     </AuthProvider>
