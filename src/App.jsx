@@ -4,7 +4,6 @@ import HomePage from "./components/HomePage";
 import ProductsPage from "./components/ProductsPage";
 import ProductDetail from "./components/ProductDetail";
 import NavBar from "./components/NavBar";
-
 import CartPage from "./components/CartPage";
 import Checkout from './components/Checkout';
 import ConfirmationPage from "./components/ConfirmationPage";
